@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vscode-icons/master/schemas/icon-theme.schema.json",
+  "version": 2,
+  "name": "EUI File Icons",
+  "icons": [
+    {
+      "id": "eui-file",
+      "description": "EUI File",
+      "fileExtensions": ["eui", "ewui"],  // 双后缀关联图标
+      "iconPath": "./eui.ico"
+    }
+  ]
+}
