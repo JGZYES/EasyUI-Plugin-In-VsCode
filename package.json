@@ -1,0 +1,94 @@
+{
+  "name": "eui-complete",
+  "displayName": "EasyUI-Plugin-In-VsCode",
+  "version": "0.0.3",
+  "publisher": "MCJGZYES",
+  "icon": "icons/eui.ico",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:eui",
+    "onCommand:eui.run"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "eui",
+        "aliases": [
+          "EUI",
+          "EasyUI"
+        ],
+        "extensions": [
+          ".eui",
+          ".ewui"  
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "eui",
+        "scopeName": "source.eui",
+        "path": "./syntaxes/eui.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "eui",
+        "path": "./snippets/eui.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "eui.run",
+        "title": "Run EUI File",
+        "category": "EUI"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "eui.run",
+        "key": "ctrl+r",
+        "mac": "cmd+r",
+        "when": "editorLangId == eui" 
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "eui-file-icons",
+        "label": "EUI File Icons",
+        "path": "./icons/eui-file-icons.json"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "eui.run",  
+          "when": "resourceLangId == eui",  
+          "group": "navigation@1",  
+          "icon": {
+            "light": "./icons/run-light.svg",  
+            "dark": "./icons/run-dark.svg"    
+          }
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "vscode:prepublish": "npm run compile",
+    "watch": "tsc -watch -p ."
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^16.18.60",
+    "typescript": "^5.2.2"
+  }
+}
