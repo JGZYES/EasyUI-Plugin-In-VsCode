@@ -1,0 +1,73 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "EUI",
+  "scopeName": "source.eui",
+  "fileTypes": ["eui", "ewui"], 
+  "patterns": [
+    {
+      "name": "comment.line.double-slash.eui",
+      "match": "//.*$",
+      "settings": {
+        "foreground": "#6A9955",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "name": "keyword.control.eui",
+      "match": "\\b(window|label|entry|combo|checkbox|button|audio|image|slider|textarea|separator|progress|calendar|radiogroup|groupbox|timer)\\b",
+      "settings": {
+        "foreground": "#569CD6",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "name": "keyword.event.eui",
+      "match": "\\b(click|change|select|play|pause|stop|timer|load)\\b",
+      "settings": {
+        "foreground": "#C586C0"
+      }
+    },
+    {
+      "name": "support.constant.property.eui",
+      "match": "\\b(title|width|height|id|text|hint|options|path|url|os|min|max|value|interval|action|visible|enabled)\\b",
+      "settings": {
+        "foreground": "#9CDCFE"
+      }
+    },
+    {
+      "name": "string.quoted.double.eui",
+      "begin": "\"",
+      "end": "\"",
+      "settings": {
+        "foreground": "#CE9178"
+      },
+      "patterns": [
+        {
+          "name": "constant.character.escape.eui",
+          "match": "\\\\."
+        }
+      ]
+    },
+    {
+      "name": "constant.numeric.eui",
+      "match": "\\b\\d+\\b",
+      "settings": {
+        "foreground": "#B5CEA8"
+      }
+    },
+    {
+      "name": "punctuation.separator.eui",
+      "match": "=|,|\\[|\\]|\\(|\\)",
+      "settings": {
+        "foreground": "#D4D4D4"
+      }
+    },
+    {
+      "name": "support.function.eui",
+      "match": "\\b(play_audio|pause_audio|stop_audio|start_timer|stop_timer|set_progress|show_message)\\b",
+      "settings": {
+        "foreground": "#4EC9B0"
+      }
+    }
+  ]
+}
